@@ -32,35 +32,138 @@ function HomePage() {
 			<div className="bg-white">
 				<div className="mx-auto flex w-full max-w-[1200px] flex-col gap-6 lg:flex-row px-5 py-10 pb-10 md:py-[104px] lg:gap-20 lg:px-10">
 					<img
-						className="mx-auto h-auto w-full sm:w-1/2"
-						src="/Group 324.svg"
+						className="mx-auto h-auto w-full sm:w-1/2 order-2 lg:order-1"
+						src="/Frame 10750.svg"
 						alt=""
 					/>
 
-					<div className="flex items-center ">
-						<div className="space-y-6 text-[#393F48]">
-							<h2 className="text-[32px] font-bold text-[#0B0F15] md:text-[40px]">
-								BoomSquad Lore
+					<div className="flex items-center lg:order-2">
+						<div className="space-y-6 text-[#3F3E3E]">
+							<h2 className="text-[32px] font-bold text-[#261447] md:text-[40px]">
+								Helping Creatives Create Better
 							</h2>
 
-							<p className="text-[18px] font-normal md:text-[20px]">
-								BoomSquad (BOOM) is a community-driven token on Stellar Soroban
-								designed to reward participation, enhance engagement, and secure
-								long-term sustainability.
+							<p className="text-[18px] font-light md:text-[20px]">
+								We go beyond exposure — Afro Ascend invests in creators by
+								covering the creative costs, setting up global monetization, and
+								guiding the growth journey of African creatives.
 							</p>
 
-							<p className="text-[18px] font-normal md:text-[20px]">
-								Unlike traditional tokens, BOOM integrates real-time DEX
-								pricing, auto-liquidity, burn-to-earn incentives, and community
-								voting. The result is a token economy where value grows with the
-								community and trust is locked in liquidity forever.
+							<p className="text-[18px] font-light md:text-[20px]">
+								Afro Ascend mission is to remove barriers, unlock monetization
+								worldwide, and give creators the tools they need to thrive.
 							</p>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<div className="bg-white">
+			{/* <div className="bg-white">
+				<div className="mb-[56px] space-y-4 text-center">
+					<p className="font-light text-[#3F3E3E] text-[18px] md:text-[20px]">
+						What We Do
+					</p>
+					<h2 className="text-[32px] font-bold text-[#261447] md:text-[40px]">
+						Our Services
+					</h2>
+				</div>
+				<div className="mx-auto flex w-full max-w-[1200px] flex-col gap-6 lg:flex-row px-5 py-10 pb-10 md:py-[104px] lg:gap-20 lg:px-10">
+					<img
+						className="mx-auto h-auto w-full sm:w-1/2 order-2 lg:order-1"
+						src="/Frame 10750.svg"
+						alt=""
+					/>
+
+					<div className="flex items-center lg:order-2">
+						<div className="space-y-6 text-[#3F3E3E]">
+							<h2 className="text-[32px] font-bold text-[#261447] md:text-[40px]">
+								Helping Creatives Create Better
+							</h2>
+
+							<p className="text-[18px] font-light md:text-[20px]">
+								We go beyond exposure — Afro Ascend invests in creators by
+								covering the creative costs, setting up global monetization, and
+								guiding the growth journey of African creatives.
+							</p>
+
+							<p className="text-[18px] font-light md:text-[20px]">
+								Afro Ascend mission is to remove barriers, unlock monetization
+								worldwide, and give creators the tools they need to thrive.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div> */}
+
+			<div className="bg-white py-10 pb-10 md:py-[104px]">
+				<div className="mb-[56px] space-y-4 text-center">
+					<p className="font-light text-[#3F3E3E] text-[18px] md:text-[20px]">
+						Why Afro Ascend
+					</p>
+					<h2 className="text-[32px] font-bold text-[#261447] md:text-[40px]">
+						Fueling Talents Without Limits
+					</h2>
+				</div>
+				<div className="mx-auto flex w-full max-w-[1200px] flex-col gap-6 lg:flex-row px-5  lg:gap-20 lg:px-10">
+					<img
+						className="mx-auto h-auto w-full sm:w-1/2"
+						src="/Frame 10799.svg"
+						alt=""
+					/>
+
+					<div className="flex flex-col items-start gap-8">
+						<div className="space-y-3 text-[#3F3E3E]">
+							<div className="space-y-0.5">
+								<p className="text-[20px] text-[#0D0106] font-normal">
+									Barrier Removal
+								</p>
+								<p className="text-[18px] text-[#3F3E3E] font-light">
+									From equipment to platform access, we eliminate roadblocks.
+								</p>
+							</div>
+
+							<div className="space-y-0.5">
+								<p className="text-[20px] text-[#0D0106] font-normal">
+									Holistic Support
+								</p>
+								<p className="text-[18px] text-[#3F3E3E] font-light">
+									Beyond exposure — we provide funding, training, and
+									mentorship.
+								</p>
+							</div>
+
+							<div className="space-y-0.5">
+								<p className="text-[20px] text-[#0D0106] font-normal">
+									Transparency
+								</p>
+								<p className="text-[18px] text-[#3F3E3E] font-light">
+									Clear agreements and fair revenue-sharing with creators.
+								</p>
+							</div>
+
+							<div className="space-y-0.5">
+								<p className="text-[20px] text-[#0D0106] font-normal">
+									Cultural Pride
+								</p>
+								<p className="text-[18px] text-[#3F3E3E] font-light">
+									We champion African talent as the next wave of global creative
+									power.
+								</p>
+							</div>
+						</div>
+
+						<Button
+							size="lg"
+							className="bg-[#FE7A04] w-fit text-white"
+							variant="secondary"
+						>
+							Join Now
+						</Button>
+					</div>
+				</div>
+			</div>
+
+			{/* <div className="bg-white">
 				<div className="mx-auto space-y-8 w-full max-w-[1200px] px-5 py-10 pb-10 md:py-[104px] lg:px-10">
 					<div>
 						<span className="text-[#393F48] md:text-[24px] font-normal">
@@ -147,7 +250,7 @@ function HomePage() {
 								key={i}
 								className="flex relative gap-4 lg:flex-col items-center max-w-[335px]"
 							>
-								{/* Icon */}
+							
 								<div className="relative z-10">
 									<img src={step.icon} alt="" />
 								</div>
@@ -230,24 +333,9 @@ function HomePage() {
 						alt=""
 					/>
 
-					{/* <div className="flex items-center lg:max-w-[520px] border md:order-2">
-						<div className="space-y-6 text-[#393F48]">
-							<h2 className="text-[30px] font-bold text-[#0B0F15] md:text-[40px]">
-								Tokenomics
-							</h2>
-
-							<div className="space-y-2">
-								<div className="p-6 rounded-[4px] bg-[#FFFBE6] space-y-2">
-									<div></div>
-								</div>
-								<div></div>
-								<div></div>
-								<div></div>
-							</div>
-						</div>
-					</div> */}
+					
 				</div>
-			</div>
+			</div> */}
 		</>
 	);
 }
