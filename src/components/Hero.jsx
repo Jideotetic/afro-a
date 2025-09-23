@@ -1,39 +1,44 @@
 import { BsPatchCheckFill } from "react-icons/bs";
+import { Button } from "./ui/button";
 
 function Hero() {
 	return (
-		<div className="bg-linear-to-b from-white via-[#FFFADF] to-white py-45">
-			<div className="mx-auto w-full max-w-[1200px] space-y-14 px-5">
-				<div className="space-y-12">
-					<div className="space-y-8 text-center">
-						<h1 className="text-[40px] font-black text-[#060708] md:text-[56px]">
-							Fair Launch. No Rugs. Just Vibes
-						</h1>
+		<div className="pt-30 bg-[#FEF7F1] relative">
+			<div className="mx-auto h-full flex items-center justify-center w-full max-w-[1200px] space-y-14 px-5">
+				<div className="h-full flex w-full flex-col items-center gap-12 lg:flex-row">
+					<div className="flex flex-col gap-6 lg:max-w-[576px]">
+						<div className="space-y-8 text-[#050215]">
+							<h2 className="text-[32px] font-bold md:text-[48px]">
+								Empowering African{" "}
+								<span className="text-[#FE7A04]">Creatives</span> to Rise Beyond
+								Borders
+							</h2>
 
-						<p className="mx-auto max-w-[772px] text-[#1A222F] font-normal text-[20px]">
-							BoomSquad (BOOM) is a community-driven token on Stellar Soroban
-							designed to reward participation, enhance engagement, and secure
-							long-term sustainability where value grows with the community and
-							trust is locked in liquidity forever
-						</p>
-
-						<div className="flex flex-col items-start lg:text-[18px] pt-4 pb-[18px] px-[48px] gap-2 text-[#0B0F15] font-bold bg-[#FFF] max-w-[335px] lg:max-w-[899px] w-full lg:flex-row lg:justify-between mx-auto rounded-[40px] lg:rounded-[72px]">
-							<div className="flex items-center gap-3">
-								<BsPatchCheckFill className="text-[#FDDA24] text-[25px] shrink-0" />
-								<span>Auto-Liquidity</span>
-							</div>
-							<div className="flex items-center gap-3">
-								<BsPatchCheckFill className="text-[#FDDA24] text-[25px] shrink-0" />
-								<span>Burn-to-Earn Incentives</span>
-							</div>
-							<div className="flex items-center gap-3">
-								<BsPatchCheckFill className="text-[#FDDA24] text-[25px] shrink-0" />
-								<span>Real-Time DEX Pricing</span>
-							</div>
+							<p className="text-[18px] font-light md:text-[24px] text-[#3F3E3E]">
+								Afro Ascend is committed to fueling African talents — from
+								musicians to comedians, skit makers, and content creators — with
+								resources, funding and international access to excel globally.
+							</p>
 						</div>
+
+						<Button
+							size="lg"
+							className="bg-[#FE7A04] w-fit text-white"
+							variant="secondary"
+						>
+							Get In Touch
+						</Button>
 					</div>
+
+					<img
+						className="mx-auto h-auto w-full bg-radial from-[#FFFADE] from-40% to-[#FEF7F1] sm:w-1/2"
+						src="/microphone.svg"
+						alt=""
+					/>
 				</div>
 			</div>
+
+			<div className="bg-[url(/Group-29.svg)] bg-cover absolute bottom-0 left-0 right-0 bg-center bg-no-repeat h-[72px]"></div>
 		</div>
 	);
 }
