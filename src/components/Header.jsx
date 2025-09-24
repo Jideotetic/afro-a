@@ -1,9 +1,9 @@
 import { NAV_LINKS } from "@/lib/constants";
 import Logo from "./Logo";
 import { NavLink } from "react-router";
-import { Button } from "./ui/button";
 import { useState } from "react";
 import MobileNavigation from "./MobileNavigation";
+import GetInTouchForm from "./GetInTouchForm";
 
 function Header() {
 	const [sheetIsOpen, setSheetIsOpen] = useState(false);
@@ -33,13 +33,7 @@ function Header() {
 					</ul>
 				</nav>
 
-				<Button
-					size="lg"
-					className="bg-[#FE7A04] text-white hidden md:block"
-					variant="secondary"
-				>
-					Get In Touch
-				</Button>
+				<GetInTouchForm tag="desktop" />
 
 				{/* MOBILE NAV */}
 				<MobileNavigation
@@ -78,13 +72,7 @@ function Header() {
 							</ul>
 						</nav>
 
-						<Button
-							size="lg"
-							className="bg-[#FE7A04] text-white w-full"
-							variant="secondary"
-						>
-							Get In Touch
-						</Button>
+						<GetInTouchForm tag="mobile" />
 					</div>
 				</MobileNavigation>
 			</div>
