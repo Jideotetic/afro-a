@@ -104,3 +104,54 @@ export const VISION = [
 		icon: PiIntersectSquareFill,
 	},
 ];
+
+export const FAQs = [
+	{
+		id: "item-1",
+		title: "How can I join Afro Ascend?",
+		content: [
+			"Our flagship product combines cutting-edge technology with sleek design. Built with premium materials, it offers unparalleled performance and reliability.",
+			"Key features include advanced processing capabilities, and an intuitive user interface designed for both beginners and experts.",
+		],
+	},
+	{
+		id: "item-2",
+		title: "Do I need to be an established creator to join?",
+		content: [
+			"We offer worldwide shipping through trusted courier partners. Standard delivery takes 3-5 business days, while express shipping ensures delivery within 1-2 business days.",
+			"All orders are carefully packaged and fully insured. Track your shipment in real-time through our dedicated tracking portal.",
+		],
+	},
+	{
+		id: "item-3",
+		title: "Is Afro Ascend free to join?",
+		content: [
+			"We stand behind our products with a comprehensive 30-day return policy. If you're not completely satisfied, simply return the item in its original condition.",
+			"Our hassle-free return process includes free return shipping and full refunds processed within 48 hours of receiving the returned item.",
+		],
+	},
+	{
+		id: "item-4",
+		title: "Is there a community space for creators?",
+		content: [
+			"We stand behind our products with a comprehensive 30-day return policy. If you're not completely satisfied, simply return the item in its original condition.",
+			"Our hassle-free return process includes free return shipping and full refunds processed within 48 hours of receiving the returned item.",
+		],
+	},
+	{
+		id: "item-5",
+		title: "Can I showcase my work on Afro Ascend?",
+		content: [
+			"We stand behind our products with a comprehensive 30-day return policy. If you're not completely satisfied, simply return the item in its original condition.",
+			"Our hassle-free return process includes free return shipping and full refunds processed within 48 hours of receiving the returned item.",
+		],
+	},
+	{
+		id: "item-6",
+		title: "How do I contact Afro Ascend for support?",
+		content: [
+			"We stand behind our products with a comprehensive 30-day return policy. If you're not completely satisfied, simply return the item in its original condition.",
+			"Our hassle-free return process includes free return shipping and full refunds processed within 48 hours of receiving the returned item.",
+		],
+	},
+];

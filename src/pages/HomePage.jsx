@@ -1,29 +1,12 @@
 import Hero from "@/components/Hero";
 import { Button } from "@/components/ui/button";
-import { SERVICES, VISION } from "@/lib/constants";
-
-const STEPS = [
-	{
-		title: "Connect Wallet",
-		description: "Securely link your funded crypto wallet to get started.",
-		icon: "/Group 313.svg",
-	},
-	{
-		title: "Enter BOOM Amount",
-		description: "Decide how many BOOM tokens you want to mint in one go",
-		icon: "/Group 319.svg",
-	},
-	{
-		title: "Check Price Peg",
-		description: "Mint price auto-follows live BOOM/XLM on Stellar DEX",
-		icon: "/Group 318.svg",
-	},
-	{
-		title: "Confirm & Chill",
-		description: "BOOM shows up instantly in your Stellar wallet.",
-		icon: "/Group 320.svg",
-	},
-];
+import { FAQs, SERVICES, VISION } from "@/lib/constants";
+import {
+	Accordion,
+	AccordionContent,
+	AccordionItem,
+	AccordionTrigger,
+} from "@/components/ui/accordion";
 
 function HomePage() {
 	return (
@@ -225,7 +208,7 @@ function HomePage() {
 				</div>
 			</div>
 
-			<div className="bg-white py-10 pb-10 md:py-[104px]">
+			<div className="bg-white mt-[104px] py-10 pb-10 md:py-[104px]">
 				<div className="mb-[56px] space-y-4 text-center">
 					<p className="font-light text-[#3F3E3E] text-[18px] md:text-[20px]">
 						FAQs
@@ -235,7 +218,28 @@ function HomePage() {
 					</h2>
 				</div>
 
-				<div className="mx-auto border-2 flex w-full max-w-[1200px] flex-col gap-6 md:flex-row px-5 items-center md:gap-10 lg:px-10"></div>
+				<div className="mx-auto flex w-full max-w-[1200px] flex-col gap-6 md:flex-row px-5 items-center md:gap-10 lg:px-10">
+					<Accordion type="single" collapsible className="w-full">
+						{FAQs.map((item, index) => (
+							<AccordionItem
+								className="border-[#FFF3E8]"
+								key={item.id}
+								value={item.id}
+							>
+								<AccordionTrigger className="text-[#261447] hover:no-underline text-[20px] font-light py-6">
+									<p className="flex gap-1">
+										{index + 1}. <span>{item.title}</span>
+									</p>
+								</AccordionTrigger>
+								<AccordionContent className="flex flex-col gap-4 text-balance">
+									{item.content.map((paragraph, index) => (
+										<p key={index}>{paragraph}</p>
+									))}
+								</AccordionContent>
+							</AccordionItem>
+						))}
+					</Accordion>
+				</div>
 			</div>
 		</>
 	);
