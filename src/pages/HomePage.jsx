@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import { Button } from "@/components/ui/button";
+import { SERVICES, VISION } from "@/lib/constants";
 
 const STEPS = [
 	{
@@ -29,7 +30,7 @@ function HomePage() {
 		<>
 			<Hero />
 
-			<div className="bg-white">
+			<div className="bg-white mt-[102px]">
 				<div className="mx-auto flex w-full max-w-[1200px] flex-col gap-6 lg:flex-row px-5 py-10 pb-10 md:py-[104px] lg:gap-20 lg:px-10">
 					<img
 						className="mx-auto h-auto w-full sm:w-1/2 order-2 lg:order-1"
@@ -58,7 +59,7 @@ function HomePage() {
 				</div>
 			</div>
 
-			{/* <div className="bg-white">
+			<div className="bg-white py-10 pb-10 md:py-[104px]">
 				<div className="mb-[56px] space-y-4 text-center">
 					<p className="font-light text-[#3F3E3E] text-[18px] md:text-[20px]">
 						What We Do
@@ -67,33 +68,47 @@ function HomePage() {
 						Our Services
 					</h2>
 				</div>
-				<div className="mx-auto flex w-full max-w-[1200px] flex-col gap-6 lg:flex-row px-5 py-10 pb-10 md:py-[104px] lg:gap-20 lg:px-10">
-					<img
-						className="mx-auto h-auto w-full sm:w-1/2 order-2 lg:order-1"
-						src="/Frame 10750.svg"
-						alt=""
-					/>
+				<div className="mx-auto grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 w-full max-w-[1200px] px-5 lg:px-10">
+					{SERVICES.map((service, index) => (
+						<div
+							key={index}
+							className="rounded-[8px] p-8 bg-[#FFF9F5] space-y-6"
+						>
+							<div className="rounded-full w-fit bg-white p-3">
+								{service.icon && (
+									<service.icon
+										className={`inline-block text-[30px] ${
+											service.title === "Monetization Setup (USA & UK)" ||
+											service.title === "Collaboration Opportunities" ||
+											service.title === "Sponsorship for Content Projects"
+												? "text-[#FE7A04]"
+												: service.title ===
+														"Content Production & Studio Access" ||
+												  service.title === "Training & Mentorship" ||
+												  service.title === "Global Visibility and Recognition"
+												? "text-[#2A1552]"
+												: service.title === "Resources & Equipment Support" ||
+												  service.title === "Promotion & Growth" ||
+												  service.title === "Analytics & Compliance Support"
+												? "text-[#FFDF00]"
+												: ""
+										}`}
+									/>
+								)}
+							</div>
 
-					<div className="flex items-center lg:order-2">
-						<div className="space-y-6 text-[#3F3E3E]">
-							<h2 className="text-[32px] font-bold text-[#261447] md:text-[40px]">
-								Helping Creatives Create Better
-							</h2>
-
-							<p className="text-[18px] font-light md:text-[20px]">
-								We go beyond exposure — Afro Ascend invests in creators by
-								covering the creative costs, setting up global monetization, and
-								guiding the growth journey of African creatives.
-							</p>
-
-							<p className="text-[18px] font-light md:text-[20px]">
-								Afro Ascend mission is to remove barriers, unlock monetization
-								worldwide, and give creators the tools they need to thrive.
-							</p>
+							<div className="space-y-3">
+								<p className="text-[#261447] text-[20px] font-bold">
+									{service.title}
+								</p>
+								<p className="font-light text-[#3F3E3E] text-[18px]">
+									{service.description}
+								</p>
+							</div>
 						</div>
-					</div>
+					))}
 				</div>
-			</div> */}
+			</div>
 
 			<div className="bg-white py-10 pb-10 md:py-[104px]">
 				<div className="mb-[56px] space-y-4 text-center">
@@ -104,7 +119,7 @@ function HomePage() {
 						Fueling Talents Without Limits
 					</h2>
 				</div>
-				<div className="mx-auto flex w-full max-w-[1200px] flex-col gap-6 lg:flex-row px-5  lg:gap-20 lg:px-10">
+				<div className="mx-auto flex w-full max-w-[1200px] flex-col gap-6 md:flex-row px-5 items-center md:gap-10 lg:px-10">
 					<img
 						className="mx-auto h-auto w-full sm:w-1/2"
 						src="/Frame 10799.svg"
@@ -112,9 +127,9 @@ function HomePage() {
 					/>
 
 					<div className="flex flex-col items-start gap-8">
-						<div className="space-y-3 text-[#3F3E3E]">
-							<div className="space-y-0.5">
-								<p className="text-[20px] text-[#0D0106] font-normal">
+						<div className="space-y-3 lg:space-y-5 text-[#3F3E3E]">
+							<div className="space-y-0.5 lg:space-y-2">
+								<p className="text-[20px] text-[#0D0106] font-medium">
 									Barrier Removal
 								</p>
 								<p className="text-[18px] text-[#3F3E3E] font-light">
@@ -122,8 +137,8 @@ function HomePage() {
 								</p>
 							</div>
 
-							<div className="space-y-0.5">
-								<p className="text-[20px] text-[#0D0106] font-normal">
+							<div className="space-y-0.5 lg:space-y-2">
+								<p className="text-[20px] text-[#0D0106] font-medium">
 									Holistic Support
 								</p>
 								<p className="text-[18px] text-[#3F3E3E] font-light">
@@ -132,8 +147,8 @@ function HomePage() {
 								</p>
 							</div>
 
-							<div className="space-y-0.5">
-								<p className="text-[20px] text-[#0D0106] font-normal">
+							<div className="space-y-0.5 lg:space-y-2">
+								<p className="text-[20px] text-[#0D0106] font-medium">
 									Transparency
 								</p>
 								<p className="text-[18px] text-[#3F3E3E] font-light">
@@ -141,8 +156,8 @@ function HomePage() {
 								</p>
 							</div>
 
-							<div className="space-y-0.5">
-								<p className="text-[20px] text-[#0D0106] font-normal">
+							<div className="space-y-0.5 lg:space-y-2">
+								<p className="text-[20px] text-[#0D0106] font-medium">
 									Cultural Pride
 								</p>
 								<p className="text-[18px] text-[#3F3E3E] font-light">
@@ -163,179 +178,65 @@ function HomePage() {
 				</div>
 			</div>
 
-			{/* <div className="bg-white">
-				<div className="mx-auto space-y-8 w-full max-w-[1200px] px-5 py-10 pb-10 md:py-[104px] lg:px-10">
-					<div>
-						<span className="text-[#393F48] md:text-[24px] font-normal">
-							Core Features
-						</span>
-						<h2 className="text-[30px] md:text-[40px] text-[#0B0F15] font-bold">
-							The BOOM Engine
-						</h2>
-					</div>
+			<div className="bg-white mt-[102px]">
+				<div className="mx-auto relative w-full bg-[#FFF3E8] max-w-[1200px] rounded-[20px] px-5 py-10 pb-10 md:py-[104px] lg:gap-20 lg:px-10">
+					<div className="bg-[url(/Group-29.svg)] rounded-t-[20px] bg-cover absolute top-0 left-0 right-0 bg-center bg-no-repeat h-[72px]"></div>
 
-					<div className="grid grid-cols-1 md:auto-rows-min md:grid-cols-2 gap-8">
-						<div className="max-w-[544px] w-full mx-auto">
-							<img src="/Frame 327.svg" alt="" />
-							<div className="space-y-4 rounded-[4px] bg-[#FFFADA] px-4 pt-6 pb-8">
-								<h3 className="text-[24px] lg:text-[28px] text-[#0B0F15] font-bold">
-									Dynamic Minting Linked to DEX
-								</h3>
-								<p className="text-[#393F48] lg:text-[18px] font-normal">
-									BOOM can be minted continuously until the fixed supply cap is
-									reached, ensuring scarcity and long-term value preservation.
-									Each mint price is automatically pegged to the real-time
-									BOOM/XLM exchange rate on the Stellar DEX.
-								</p>
-							</div>
+					<div className="bg-[url(/Group-29.svg)] rounded-b-[20px] bg-cover absolute bottom-0 left-0 right-0 bg-center bg-no-repeat h-[72px]"></div>
+
+					<div className="bg-white relative top-0 bottom-0 rounded-[8px] pt-[48px] pb-[64px] space-y-[56px] px-[24px] w-full">
+						<div className="mb-[56px] space-y-4 text-center">
+							<p className="font-light text-[#FE7A04] text-[18px] md:text-[24px]">
+								Our Vision Board
+							</p>
+							<h2 className="text-[20px] max-w-[690px] mx-auto font-bold text-[#261447] md:text-[28px]">
+								Within 6-12 months, Afro Ascend creators are projected to:
+							</h2>
 						</div>
 
-						<div className="max-w-[544px] w-full mx-auto">
-							<img src="/Frame 329.svg" alt="" />
-							<div className="space-y-4 rounded-[4px] bg-[#FFFADA] px-4 pt-6 pb-8">
-								<h3 className="text-[24px] lg:text-[28px] text-[#0B0F15] font-bold">
-									Community Governance
-								</h3>
-								<p className="text-[#393F48] lg:text-[18px] font-normal">
-									BOOM doubles as voting power, giving holders a direct voice in
-									the ecosystem. From treasury spending, protocol upgrades,
-									community campaigns and even proposals can be created by any
-									holder with a minimum stake.
-								</p>
-							</div>
-						</div>
+						<div className="grid grid-cols-1 gap-10 sm:grid-cols-2 mx-auto">
+							{VISION.map((vision, index) => (
+								<div key={index} className="flex items-center gap-4">
+									{vision.icon && (
+										<vision.icon
+											className={`inline-block text-[30px] ${
+												vision.title ===
+													"Produce professional, high-quality content with proper tools." ||
+												vision.title ===
+													"Sign international record or content distribution deals."
+													? "text-[#FE7A04]"
+													: vision.title ===
+															"Experience growth and trend across diverse platforms." ||
+													  vision.title ===
+															"Secure sponsorships, partnerships, and business deals."
+													? "text-[#2A1552]"
+													: "text-[#FFDF00]"
+											}`}
+										/>
+									)}
 
-						<div className="max-w-[544px] w-full mx-auto">
-							<img src="/Frame 327 (1).svg" alt="" />
-							<div className="space-y-4 rounded-[4px] bg-[#FFFADA] px-4 pt-6 pb-8">
-								<h3 className="text-[24px] lg:text-[28px] text-[#0B0F15] font-bold">
-									Burn Now, Flex Later
-								</h3>
-								<p className="text-[#393F48] lg:text-[18px] font-normal">
-									You can voluntarily burn BOOM tokens into a smart contract
-									vault and after a fixed vesting period, reclaim them with
-									bonus rewards which increases scarcity and incentivizes
-									loyalty by rewarding long-term holders.
-								</p>
-							</div>
-						</div>
-
-						<div className="max-w-[544px] w-full mx-auto">
-							<img className="h-auto" src="/Frame 329.svg" alt="" />
-							<div className="space-y-4 rounded-[4px] bg-[#FFFADA] px-4 pt-6 pb-8">
-								<h3 className="text-[24px] lg:text-[28px] text-[#0B0F15] font-bold">
-									Real-Time Liquidity & Security
-								</h3>
-								<p className="text-[#393F48] lg:text-[18px] font-normal">
-									Every mint automatically adds liquidity to the BOOM/XLM pool,
-									with LP tokens permanently burned so liquidity can never be
-									withdrawn which guarantees a fair trading environment,
-									rug-pull risk elimination and a trustless DEX listing.
-								</p>
-							</div>
+									<p className="text-[#3F3E3E] font-light text-[18px]">
+										{vision.title}
+									</p>
+								</div>
+							))}
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<div className="bg-white">
-				<div className="mx-auto space-y-8 w-full max-w-[1200px] px-5 py-10 pb-10 md:py-[104px] lg:px-10">
-					<h2 className="text-[30px] text-center md:text-[40px] text-[#0B0F15] font-bold">
-						Mint It Like It's Hot
+			<div className="bg-white py-10 pb-10 md:py-[104px]">
+				<div className="mb-[56px] space-y-4 text-center">
+					<p className="font-light text-[#3F3E3E] text-[18px] md:text-[20px]">
+						FAQs
+					</p>
+					<h2 className="text-[32px] font-bold text-[#261447] md:text-[40px]">
+						Frequently Asked Questions
 					</h2>
-
-					<div className="flex flex-col items-center justify-center gap-10 lg:flex-row">
-						{STEPS.map((step, i) => (
-							<div
-								key={i}
-								className="flex relative gap-4 lg:flex-col items-center max-w-[335px]"
-							>
-							
-								<div className="relative z-10">
-									<img src={step.icon} alt="" />
-								</div>
-
-								{i !== STEPS.length - 1 && (
-									<div className="absolute left-[20px] top-full mt-2 h-10 w-[2px] bg-[#EAC506] lg:left-full lg:top-[28px] lg:mt-0 lg:h-[2px] lg:w-1/3" />
-								)}
-
-								<div className="space-y-3">
-									<div className="text-[20px] font-bold text-[#0B0F15] lg:text-center">
-										{step.title}
-									</div>
-									<div className="text-[#2B3646] font-normal lg:text-center">
-										{step.description}
-									</div>
-								</div>
-							</div>
-						))}
-					</div>
-
-					<Button
-						size="lg"
-						className="bg-[#FDDA24] text-[#060708] mx-auto block"
-						variant="secondary"
-					>
-						Mint BOOM
-					</Button>
 				</div>
+
+				<div className="mx-auto border-2 flex w-full max-w-[1200px] flex-col gap-6 md:flex-row px-5 items-center md:gap-10 lg:px-10"></div>
 			</div>
-
-			<div className="bg-white">
-				<div className="mx-auto flex w-full max-w-[1200px] flex-col gap-6 md:flex-row px-5 py-10 pb-10 md:py-[104px] lg:px-10">
-					<div className="md:mx-0 w-full space-y-5 mx-auto md:flex-1 md:order-2">
-						<h2 className="text-[30px] font-bold text-[#0B0F15] md:text-[40px]">
-							Tokenomics
-						</h2>
-
-						<div className="p-6 rounded-[4px] bg-[#FFFBE6] space-y-2">
-							<div className="text-[18px] text-[#E1BD00] font-medium">
-								Total Supply Cap
-							</div>
-							<div className="text-[#0B0F15] font-medium text-[18px]">
-								1,000,000,000 BOOM
-							</div>
-						</div>
-
-						<div className="p-6 rounded-[4px] bg-[#FFFBE6] space-y-2">
-							<div className="text-[18px] text-[#E1BD00] font-medium">
-								Minting Model
-							</div>
-							<ul className="text-[#0B0F15] font-medium text-[18px] list-disc pl-4">
-								<li>60% - Liquidity Pool (LP)</li>
-								<li>30% - Treasury</li>
-								<li>10% - Development Fund</li>
-							</ul>
-						</div>
-
-						<div className="p-6 rounded-[4px] bg-[#FFFBE6] space-y-2">
-							<div className="text-[18px] text-[#E1BD00] font-medium">
-								Liquidity
-							</div>
-							<div className="text-[#0B0F15] font-medium text-[18px]">
-								Auto-locked forever, no withdrawals
-							</div>
-						</div>
-
-						<div className="p-6 rounded-[4px] bg-[#FFFBE6] space-y-2">
-							<div className="text-[18px] text-[#E1BD00] font-medium">
-								Distribution
-							</div>
-							<div className="text-[#0B0F15] font-medium text-[18px]">
-								Transparent and community-first
-							</div>
-						</div>
-					</div>
-
-					<img
-						className="mx-auto md:mx-0 h-auto w-full md:w-1/2"
-						src="/Group 307.svg"
-						alt=""
-					/>
-
-					
-				</div>
-			</div> */}
 		</>
 	);
 }
