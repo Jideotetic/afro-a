@@ -10,14 +10,30 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "./ui/button";
 import { Label } from "./ui/label";
-// import { Input } from "./ui/input";
 import CustomInput from "./CustomInput";
 import { Textarea } from "./ui/textarea";
-// import FileUpload from "./FileUpload";
+import { RiInstagramFill, RiTiktokFill, RiTwitterXFill } from "react-icons/ri";
+import { PiWhatsappLogoFill } from "react-icons/pi";
+import { IoIosArrowDropleftCircle } from "react-icons/io";
+import { useState } from "react";
 
 function GetInTouchForm({ tag = "desktop" | "mobile" }) {
+	const [open, setOpen] = useState(false);
+	const [submitted, setSubmitted] = useState(false);
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+
+		setSubmitted(true);
+	};
+
+	const handleClose = () => {
+		setOpen(false);
+		setSubmitted(false);
+	};
+
 	return (
-		<Dialog>
+		<Dialog open={open} onOpenChange={setOpen}>
 			<form>
 				<DialogTrigger asChild>
 					<Button
@@ -30,69 +46,176 @@ function GetInTouchForm({ tag = "desktop" | "mobile" }) {
 						Get In Touch
 					</Button>
 				</DialogTrigger>
-				<DialogContent className="scrollbar-hidden max-h-[calc(100vh-150px)] overflow-scroll bg-white sm:max-w-[1128px]">
-					<DialogHeader>
-						<DialogTitle className="text-left text-[#FE7A04] text-[20px] sm:text-[32px]">
-							Join the Afro Ascend Creator Circle
-						</DialogTitle>
-						<DialogDescription className="text-[#6C6B6B] text-left font-light sm:text-[18px]">
-							Fill out the form and we will reach out to you.
-						</DialogDescription>
-					</DialogHeader>
-					<div className="grid gap-5 sm:grid-cols-2">
-						<CustomInput
-							label="Full Name"
-							placeholder="Enter Name"
-							type="text"
-						/>
-
-						<CustomInput
-							label="Phone Number"
-							placeholder="Enter Phone Number"
-							type="text"
-						/>
-
-						<CustomInput
-							label="Email Address"
-							placeholder="Enter Email Address"
-							type="email"
-						/>
-
-						<CustomInput
-							label="Which options apply to you?"
-							placeholder="Select"
-							// prefix="https://"
-							type="url"
-						/>
-
-						<Label className="flex flex-col items-start gap-2 font-light text-[#09032A]">
-							Briefly tell us about your creative journey
-							<Textarea
-								className="h-[148px] rounded-[8px] border border-[#D0D5E0] px-4 placeholder:text-sm placeholder:text-[#8791A7] focus:border-none focus:outline-0 focus:outline-none focus-visible:border-none focus-visible:ring-0"
-								placeholder="Type text..."
+				{!submitted ? (
+					<DialogContent className="scrollbar-hidden max-h-[calc(100vh-150px)] overflow-scroll bg-white sm:max-w-[1128px]">
+						<DialogHeader>
+							<button
+								onClick={handleClose}
+								className="flex cursor-pointer items-center gap-2"
+							>
+								<IoIosArrowDropleftCircle className="text-[32px] text-[#2A1552]" />
+								<span className="text-[18px] text-[#2A1552]">Back</span>
+							</button>
+							<DialogTitle className="text-left text-[#FE7A04] text-[20px] sm:text-[32px]">
+								Join the Afro Ascend Creator Circle
+							</DialogTitle>
+							<DialogDescription className="text-[#6C6B6B] text-left font-light sm:text-[18px]">
+								Fill out the form and we will reach out to you.
+							</DialogDescription>
+						</DialogHeader>
+						<div className="grid gap-5 sm:grid-cols-2">
+							<CustomInput
+								label="Full Name"
+								placeholder="Enter Name"
+								type="text"
 							/>
-						</Label>
 
-						<Label className="flex flex-col items-start gap-2 font-light text-[#09032A]">
-							Anything question for Afro Ascend? (optional)
-							<Textarea
-								className="h-[148px] rounded-[8px] border border-[#D0D5E0] px-4 placeholder:text-sm placeholder:text-[#8791A7] focus:border-none focus:outline-0 focus:outline-none focus-visible:border-none focus-visible:ring-0"
-								placeholder="Type text..."
+							<CustomInput
+								label="Phone Number"
+								placeholder="Enter Phone Number"
+								type="text"
 							/>
-						</Label>
-					</div>
-					<DialogFooter>
-						<DialogClose asChild></DialogClose>
-						<Button
-							className="bg-[#FE7A04] text-white cursor-pointer"
-							variant="secondary"
-							size="lg"
-							type="submit"
-						>
-							Let's Connect
-						</Button>
-					</DialogFooter>
-				</DialogContent>
+
+							<CustomInput
+								label="Email Address"
+								placeholder="Enter Email Address"
+								type="email"
+							/>
+
+							<CustomInput
+								label="Which options apply to you?"
+								placeholder="Select"
+								// prefix="https://"
+								type="url"
+							/>
+
+							<CustomInput
+								label="WhatsApp Contact"
+								placeholder="Enter WhatsApp Number"
+								type="text"
+							/>
+
+							<CustomInput
+								label="Instagram Page"
+								placeholder="Paste URL"
+								prefix="https://"
+								type="url"
+							/>
+
+							<CustomInput
+								label="TikTok Page"
+								placeholder="Paste URL"
+								prefix="https://"
+								type="url"
+							/>
+
+							<CustomInput
+								label="Facebook Page"
+								placeholder="Paste URL"
+								prefix="https://"
+								type="url"
+							/>
+
+							<CustomInput
+								label="Is any of your social media pages monetized?"
+								placeholder="Select"
+								// prefix="https://"
+								type="url"
+							/>
+
+							<CustomInput
+								label="Select the monetized page(s)"
+								placeholder="Select"
+								// prefix="https://"
+								type="url"
+							/>
+
+							<Label className="flex flex-col items-start gap-2 font-light text-[#09032A]">
+								Briefly tell us about your creative journey
+								<Textarea
+									className="h-[148px] rounded-[8px] border border-[#D0D5E0] px-4 placeholder:text-sm placeholder:text-[#8791A7] focus:border-[#D0D5E0] focus:outline-1 focus-visible:border focus-visible:ring-1"
+									placeholder="Type text..."
+								/>
+							</Label>
+
+							<Label className="flex flex-col items-start gap-2 font-light text-[#09032A]">
+								Anything question for Afro Ascend? (optional)
+								<Textarea
+									className="h-[148px] rounded-[8px] border border-[#D0D5E0] px-4 placeholder:text-sm placeholder:text-[#8791A7] focus:border-[#D0D5E0] focus:outline-1 focus-visible:border focus-visible:ring-1"
+									placeholder="Type text..."
+								/>
+							</Label>
+						</div>
+						<DialogFooter className="flex items-center sm:justify-between flex-wrap gap-8">
+							<ul className="flex items-center flex-wrap gap-5">
+								<li className="group hover:text-[#FE7A04] flex items-center gap-2">
+									<PiWhatsappLogoFill className="rounded-[4px] group-hover:text-[#FE7A04] text-[20px] text-[#0D0106]" />
+									<a href="">WhatsApp</a>
+								</li>
+								<li className="group flex hover:text-[#FE7A04] items-center gap-2">
+									<RiTwitterXFill className="rounded-[4px] group-hover:text-[#FE7A04] text-[20px] text-[#0D0106]" />
+									<a href="">Twitter</a>
+								</li>
+								<li className="group hover:text-[#FE7A04] flex items-center gap-2">
+									<RiInstagramFill className="rounded-[4px] group-hover:text-[#FE7A04] text-[20px] text-[#0D0106]" />
+									<a href="">Instagram</a>
+								</li>
+								<li className="group hover:text-[#FE7A04] flex items-center gap-2">
+									<RiTiktokFill className="rounded-[4px] group-hover:text-[#FE7A04] text-[20px] text-[#0D0106]" />
+									<a href="">TikTok</a>
+								</li>
+							</ul>
+
+							<DialogClose asChild>
+								<Button
+									className="bg-[#FE7A04] w-full sm:w-fit text-white cursor-pointer"
+									variant="secondary"
+									size="lg"
+									type="submit"
+									onClick={handleSubmit}
+								>
+									Let's Connect
+								</Button>
+							</DialogClose>
+						</DialogFooter>
+					</DialogContent>
+				) : (
+					<DialogContent className="scrollbar-hidden max-h-[calc(100vh-150px)] overflow-scroll bg-white sm:max-w-[592px]">
+						<DialogHeader>
+							<DialogTitle className="sr-only">
+								Join the Afro Ascend Creator Circle
+							</DialogTitle>
+							<DialogDescription className="sr-only">
+								Fill out the form and we will reach out to you.
+							</DialogDescription>
+						</DialogHeader>
+						<div className="space-y-8">
+							<img src="/Frame 43557.svg" className="mx-auto h-auto" alt="" />
+
+							<div className="space-y-3 text-center mx-auto max-w-[287px]">
+								<p className="text-[20px] text-[#2A1552] font-bold">
+									Details Sent
+								</p>
+								<p className="sm:text-[18px] text-[#6C6B6B] font-light">
+									Your details have been successfully submitted. You will hear
+									from us soon.
+								</p>
+							</div>
+						</div>
+						<DialogFooter>
+							<DialogClose asChild>
+								<Button
+									className="bg-[#FE7A04] w-full text-white cursor-pointer"
+									variant="secondary"
+									size="lg"
+									onClick={handleClose}
+								>
+									Got it
+								</Button>
+							</DialogClose>
+						</DialogFooter>
+					</DialogContent>
+				)}
 			</form>
 		</Dialog>
 	);
