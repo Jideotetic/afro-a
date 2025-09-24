@@ -11,7 +11,7 @@ function Logo() {
 			}}
 			className="text-[24px] font-extrabold text-[#FE7A04]"
 		>
-			AFRO.A
+			<img src="/Frame (2).svg" alt="" />
 		</Link>
 	);
 }

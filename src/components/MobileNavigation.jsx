@@ -50,7 +50,7 @@ function MobileNavigation({
 								});
 							}}
 						>
-							AFRO.A
+							<img src="/Frame (2).svg" alt="" />
 						</Link>
 					</SheetTitle>
 					<SheetDescription className="sr-only">

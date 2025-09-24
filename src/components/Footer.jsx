@@ -12,7 +12,7 @@ function Footer() {
 					<div className="space-y-5 max-w-[320px] md:max-w-[350px]">
 						<div className="flex flex-col gap-3">
 							<span className="text-[24px] font-extrabold text-[#FE7A04]">
-								AFRO.A
+								<img src="/Frame (2).svg" alt="" />
 							</span>
 							<span>
 								For creators who may not be known today, but will shape the
