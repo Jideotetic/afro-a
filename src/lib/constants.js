@@ -15,9 +15,9 @@ import { PiArrowsOutFill } from "react-icons/pi";
 import { PiIntersectSquareFill } from "react-icons/pi";
 
 export const NAV_LINKS = [
-	{ title: "Services", href: "/services" },
-	{ title: "Benefits", href: "/benefits" },
-	{ title: "FAQs", href: "/faqs" },
+	{ title: "Services", href: "#services" },
+	{ title: "Benefits", href: "#benefits" },
+	{ title: "FAQs", href: "#faqs" },
 ];
 
 export const SERVICES = [

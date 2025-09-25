@@ -50,7 +50,7 @@ function MobileNavigation({
 								});
 							}}
 						>
-							<img src="/Frame (2).svg" alt="" />
+							<img src="/Frame (2).svg" alt="" className="w-[114px] h-auto" />
 						</Link>
 					</SheetTitle>
 					<SheetDescription className="sr-only">

@@ -42,7 +42,7 @@ function HomePage() {
 				</div>
 			</div>
 
-			<div className="bg-white py-10 pb-10 md:py-[104px]">
+			<div className="bg-white py-10 pb-10 md:py-[104px]" id="services">
 				<div className="mb-[56px] space-y-4 text-center">
 					<p className="font-light text-[#3F3E3E] text-[18px] md:text-[20px]">
 						What We Do
@@ -93,7 +93,7 @@ function HomePage() {
 				</div>
 			</div>
 
-			<div className="bg-white py-10 pb-10 md:py-[104px]">
+			<div className="bg-white py-10 pb-10 md:py-[104px]" id="benefits">
 				<div className="mb-[56px] space-y-4 text-center">
 					<p className="font-light text-[#3F3E3E] text-[18px] md:text-[20px]">
 						Why Afro Ascend
@@ -208,7 +208,7 @@ function HomePage() {
 				</div>
 			</div>
 
-			<div className="bg-white mt-[104px] py-10 pb-10 md:py-[104px]">
+			<div className="bg-white mt-[104px] py-10 pb-10 md:py-[104px]" id="faqs">
 				<div className="mb-[56px] space-y-4 text-center">
 					<p className="font-light text-[#3F3E3E] text-[18px] md:text-[20px]">
 						FAQs

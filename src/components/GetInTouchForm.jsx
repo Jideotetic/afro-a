@@ -19,10 +19,7 @@ import { useState } from "react";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
 import { Input } from "./ui/input";
-import Select from "react-select";
-import makeAnimated from "react-select/animated";
-
-const animatedComponents = makeAnimated();
+import CustomSelect from "./CustomSelect";
 
 function GetInTouchForm({ tag = "desktop" | "mobile" }) {
 	const [open, setOpen] = useState(false);
@@ -30,11 +27,27 @@ function GetInTouchForm({ tag = "desktop" | "mobile" }) {
 	const [whatsApp, setWhatsApp] = useState("");
 	const [phone, setPhone] = useState("");
 	const [sameAsPhone, setSameAsPhone] = useState(false);
+	const [pagesMonetized, setPagesMonetized] = useState(false);
 
 	const options = [
-		{ value: "chocolate", label: "Chocolate" },
-		{ value: "strawberry", label: "Strawberry" },
-		{ value: "vanilla", label: "Vanilla" },
+		{ value: "musician", label: "Musician" },
+		{ value: "content-creator", label: "Content Creator" },
+		{ value: "comedian", label: "Comedian" },
+		{ value: "skit-maker", label: "Skit Maker" },
+		{ value: "artist", label: "Artist" },
+	];
+
+	const monetizedOptions = [
+		{ value: "yes", label: "Yes" },
+		{ value: "no", label: "No" },
+	];
+
+	const pagesMonetizedOptions = [
+		{ value: "facebook", label: "Facebook" },
+		{ value: "tiktok", label: "TikTok" },
+		{ value: "instagram", label: "Instagram" },
+		{ value: "twitter", label: "Twitter" },
+		{ value: "youtube", label: "YouTube" },
 	];
 
 	const handleSubmit = (e) => {
@@ -63,7 +76,7 @@ function GetInTouchForm({ tag = "desktop" | "mobile" }) {
 					</Button>
 				</DialogTrigger>
 				{!submitted ? (
-					<DialogContent className="scrollbar-hidden max-h-[calc(100vh-100px)] overflow-scroll w-full bg-white sm:max-w-[1128px]">
+					<DialogContent className="scrollbar-hidden max-h-[calc(100vh-100px)] pt-[56px] pb-[72px] px-[64px] overflow-scroll w-full bg-white sm:max-w-[1128px]">
 						<DialogHeader>
 							<button
 								onClick={handleClose}
@@ -79,7 +92,7 @@ function GetInTouchForm({ tag = "desktop" | "mobile" }) {
 								Fill out the form and we will reach out to you.
 							</DialogDescription>
 						</DialogHeader>
-						<div className="grid gap-5 sm:grid-cols-2">
+						<div className="grid gap-6 sm:gap-10 sm:grid-cols-2">
 							<CustomInput
 								label="Full Name"
 								placeholder="Enter Name"
@@ -118,43 +131,12 @@ function GetInTouchForm({ tag = "desktop" | "mobile" }) {
 								type="email"
 							/>
 
-							<div className="flex flex-col gap-1 text-sm">
-								<label className="block  font-light text-[#3F3E3E]">
-									Which options apply to you?
-								</label>
-
-								<Select
-									closeMenuOnSelect={false}
-									components={animatedComponents}
-									placeholder="Select"
-									isMulti
-									options={options}
-									styles={{
-										control: (baseStyles, state) => ({
-											...baseStyles,
-											borderColor: state.isFocused ? "#D0D5E0" : "#D0D5E0",
-											// outline: state.isFocused ? "none" : "none",
-											borderRadius: "12px",
-											height: "46px",
-										}),
-										multiValue: (styles) => {
-											return {
-												...styles,
-												backgroundColor: "#FFF3EA",
-												color: "#261447",
-												fontWeight: "300",
-												borderRadius: "4px",
-											};
-										},
-										multiValueRemove: (styles) => ({
-											...styles,
-											color: "#FE7A04",
-											backgroundColor: "white",
-											borderRadius: "50%",
-										}),
-									}}
-								/>
-							</div>
+							<CustomSelect
+								options={options}
+								label="Which options apply to you?"
+								isMulti={true}
+								closeMenuOnSelect={false}
+							/>
 
 							<div className="flex flex-col gap-1 text-sm">
 								<div className="flex justify-between flex-wrap gap-2">
@@ -222,81 +204,30 @@ function GetInTouchForm({ tag = "desktop" | "mobile" }) {
 								type="url"
 							/>
 
-							<div className="flex flex-col gap-1 text-sm">
-								<label className="block  font-light text-[#3F3E3E]">
-									Is any of your social media pages monetized?
-								</label>
+							<CustomSelect
+								options={monetizedOptions}
+								label="Is any of your social media pages monetized?"
+								isMulti={false}
+								closeMenuOnSelect={true}
+								onChange={(e) => {
+									console.log(e);
+									if (e.value === "yes") {
+										setPagesMonetized(true);
+									} else {
+										setPagesMonetized(false);
+									}
 
-								<Select
-									closeMenuOnSelect={false}
-									components={animatedComponents}
-									placeholder="Select"
-									isMulti
-									options={options}
-									styles={{
-										control: (baseStyles, state) => ({
-											...baseStyles,
-											borderColor: state.isFocused ? "#D0D5E0" : "#D0D5E0",
-											// outline: state.isFocused ? "none" : "none",
-											borderRadius: "12px",
-											height: "46px",
-										}),
-										multiValue: (styles) => {
-											return {
-												...styles,
-												backgroundColor: "#FFF3EA",
-												color: "#261447",
-												fontWeight: "300",
-												borderRadius: "4px",
-											};
-										},
-										multiValueRemove: (styles) => ({
-											...styles,
-											color: "#FE7A04",
-											backgroundColor: "white",
-											borderRadius: "50%",
-										}),
-									}}
-								/>
-							</div>
+									console.log(pagesMonetized);
+								}}
+							/>
 
-							<div className="flex flex-col gap-1 text-sm">
-								<label className="block  font-light text-[#3F3E3E]">
-									Select the monetized page(s)
-								</label>
-
-								<Select
-									closeMenuOnSelect={false}
-									components={animatedComponents}
-									placeholder="Select"
-									isMulti
-									options={options}
-									styles={{
-										control: (baseStyles, state) => ({
-											...baseStyles,
-											borderColor: state.isFocused ? "#D0D5E0" : "#D0D5E0",
-											// outline: state.isFocused ? "none" : "none",
-											borderRadius: "12px",
-											height: "46px",
-										}),
-										multiValue: (styles) => {
-											return {
-												...styles,
-												backgroundColor: "#FFF3EA",
-												color: "#261447",
-												fontWeight: "300",
-												borderRadius: "4px",
-											};
-										},
-										multiValueRemove: (styles) => ({
-											...styles,
-											color: "#FE7A04",
-											backgroundColor: "white",
-											borderRadius: "50%",
-										}),
-									}}
-								/>
-							</div>
+							<CustomSelect
+								options={pagesMonetizedOptions}
+								label="Select the monetized page(s)"
+								isMulti={true}
+								closeMenuOnSelect={false}
+								disabled={!pagesMonetized}
+							/>
 
 							<Label className="flex flex-col items-start gap-2 font-light text-[#09032A]">
 								Briefly tell us about your creative journey

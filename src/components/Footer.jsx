@@ -22,7 +22,7 @@ function Footer() {
 
 						<div className="flex flex-col gap-2 font-normal">
 							<span>afroascend@gmail.com</span>
-							<span>+12384652670</span>
+							<Link className="text-[#FE7A04] hover:underline">Chat with us</Link>
 						</div>
 					</div>
 					<div className="space-y-3">
