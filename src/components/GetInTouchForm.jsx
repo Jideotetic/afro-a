@@ -27,7 +27,7 @@ function GetInTouchForm({ tag = "desktop" | "mobile" | "hero", title }) {
 	const [whatsApp, setWhatsApp] = useState("");
 	const [phone, setPhone] = useState("");
 	const [sameAsPhone, setSameAsPhone] = useState(false);
-	const [pagesMonetized, setPagesMonetized] = useState(true);
+	const [pagesMonetized, setPagesMonetized] = useState(false);
 	const [selectedMonetizedPages, setSelectedMonetizedPages] = useState([]);
 
 	const options = [
@@ -61,8 +61,6 @@ function GetInTouchForm({ tag = "desktop" | "mobile" | "hero", title }) {
 		setOpen(false);
 		setSubmitted(false);
 	};
-
-	console.log({ pagesMonetized });
 
 	return (
 		<Dialog
