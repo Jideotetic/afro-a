@@ -1,6 +1,5 @@
 import { NAV_LINKS } from "@/lib/constants";
 import Logo from "./Logo";
-import { NavLink } from "react-router";
 import { useState } from "react";
 import MobileNavigation from "./MobileNavigation";
 import GetInTouchForm from "./GetInTouchForm";
@@ -9,25 +8,22 @@ function Header() {
 	const [sheetIsOpen, setSheetIsOpen] = useState(false);
 
 	return (
-		<header className="mx-auto flex w-full max-w-[1120px] items-center justify-between">
-			<Logo />
+		<header className="mx-auto font-normal text-[18px] text-[#3F3E3E] flex w-full max-w-[1200px] items-center justify-between">
+			<Logo setSheetIsOpen={setSheetIsOpen} />
 
+			{/* NAVIGATION */}
 			<div className="flex items-center justify-between gap-14">
 				{/* DESKTOP NAV */}
 				<nav className="hidden md:block">
 					<ul className="flex gap-12">
 						{NAV_LINKS.map((link) => (
 							<li key={link.title}>
-								<NavLink
-									className={({ isActive }) =>
-										isActive
-											? "font-extrabold text-[#FE7A04] hover:underline"
-											: "text-[#3F3E3E] hover:text-[#FE7A04] hover:underline"
-									}
-									to={link.href}
+								<a
+									className="hover:text-[#FE7A04] hover:underline"
+									href={link.href}
 								>
 									{link.title}
-								</NavLink>
+								</a>
 							</li>
 						))}
 					</ul>
@@ -46,27 +42,13 @@ function Header() {
 							<ul className="flex flex-col gap-10">
 								{NAV_LINKS.map((link) => (
 									<li key={link.title}>
-										{link.title === "Testimonials" ? (
-											<a
-												className="text-[#0D0516] hover:text-[#2F0FD1] hover:underline"
-												href={link.href}
-												onClick={() => setSheetIsOpen(false)}
-											>
-												{link.title}
-											</a>
-										) : (
-											<NavLink
-												className={({ isActive }) =>
-													isActive
-														? "font-extrabold text-[#FE7A04] hover:underline"
-														: "text-[#3F3E3E] hover:text-[#FE7A04] hover:underline"
-												}
-												to={link.href}
-												onClick={() => setSheetIsOpen(false)}
-											>
-												{link.title}
-											</NavLink>
-										)}
+										<a
+											className="hover:text-[#FE7A04] text-[18px] hover:underline"
+											href={link.href}
+											onClick={() => setSheetIsOpen(false)}
+										>
+											{link.title}
+										</a>
 									</li>
 								))}
 							</ul>

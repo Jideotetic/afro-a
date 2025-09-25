@@ -1,4 +1,3 @@
-import { BsPatchCheckFill } from "react-icons/bs";
 import { Button } from "./ui/button";
 
 function Hero() {
@@ -8,7 +7,7 @@ function Hero() {
 				<div className="h-full flex w-full flex-col items-center gap-12 lg:flex-row">
 					<div className="flex flex-col gap-6 lg:max-w-[576px]">
 						<div className="space-y-8 text-[#050215]">
-							<h2 className="text-[32px] font-bold md:text-[48px]">
+							<h2 className="text-[32px] font-bold md:text-[48px] font-syne">
 								Empowering African{" "}
 								<span className="text-[#FE7A04]">Creatives</span> to Rise Beyond
 								Borders

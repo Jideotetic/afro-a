@@ -8,11 +8,15 @@ function Footer() {
 	return (
 		<footer className="text-[#0D0106] md:text-[18px] font-light relative">
 			<div className="px-5 py-10 pb-30 sm:pb-22">
-				<div className="w-full mx-auto max-w-[1120px] flex flex-col sm:flex-row gap-6 sm:justify-between flex-wrap">
+				<div className="w-full mx-auto max-w-[1200px] flex flex-col sm:flex-row gap-6 sm:justify-between flex-wrap">
 					<div className="space-y-5 max-w-[320px] md:max-w-[350px]">
 						<div className="flex flex-col gap-3">
 							<span className="text-[24px] font-extrabold text-[#FE7A04]">
-								<img src="/Frame (2).svg" alt="" />
+								<img
+									src="/Frame (2).svg"
+									alt="logo"
+									className="w-[114px] h-[20px] md:w-[216px] md:h-[38px]"
+								/>
 							</span>
 							<span>
 								For creators who may not be known today, but will shape the
@@ -22,7 +26,9 @@ function Footer() {
 
 						<div className="flex flex-col gap-2 font-normal">
 							<span>afroascend@gmail.com</span>
-							<Link className="text-[#FE7A04] hover:underline">Chat with us</Link>
+							<Link className="text-[#FE7A04] hover:underline">
+								Chat with us
+							</Link>
 						</div>
 					</div>
 					<div className="space-y-3">
@@ -69,7 +75,7 @@ function Footer() {
 			</div>
 
 			<div className="absolute bottom-0 left-0 right-0 bg-[url(/Group-30.svg)] bg-cover bg-center bg-no-repeat px-5 py-10">
-				<div className="mx-auto w-full max-w-[1120px] sm:text-center">
+				<div className="mx-auto w-full max-w-[1200px] sm:text-center">
 					©️ 2025 Afro Ascend. All rights reserved.
 				</div>
 			</div>

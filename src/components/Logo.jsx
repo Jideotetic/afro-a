@@ -1,17 +1,21 @@
 import { Link } from "react-router";
 
-function Logo() {
+function Logo({ setSheetIsOpen }) {
 	return (
 		<Link
 			to="/"
 			onClick={() => {
+				setSheetIsOpen(false);
 				window.scrollTo({
 					top: 0,
 				});
 			}}
-			className="text-[24px] font-extrabold text-[#FE7A04]"
 		>
-			<img src="/Frame (2).svg" alt="" className="w-[114px] h-auto lg:w-full" />
+			<img
+				src="/Frame (2).svg"
+				alt="Logo"
+				className="w-[114px] h-[20px] md:w-[216px] md:h-[38px]"
+			/>
 		</Link>
 	);
 }

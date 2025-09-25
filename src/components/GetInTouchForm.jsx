@@ -21,7 +21,7 @@ import "react-international-phone/style.css";
 import { Input } from "./ui/input";
 import CustomSelect from "./CustomSelect";
 
-function GetInTouchForm({ tag = "desktop" | "mobile" }) {
+function GetInTouchForm({ tag = "desktop" | "mobile", title }) {
 	const [open, setOpen] = useState(false);
 	const [submitted, setSubmitted] = useState(false);
 	const [whatsApp, setWhatsApp] = useState("");
@@ -67,12 +67,12 @@ function GetInTouchForm({ tag = "desktop" | "mobile" }) {
 				<DialogTrigger asChild>
 					<Button
 						size="lg"
-						className={`bg-[#FE7A04] text-white ${
+						className={`bg-[#FE7A04] text-white text-base ${
 							tag === "desktop" ? "hidden md:block" : "block w-full"
 						} cursor-pointer `}
 						variant="secondary"
 					>
-						Get In Touch
+						{title ? title : "Get in Touch"}
 					</Button>
 				</DialogTrigger>
 				{!submitted ? (
