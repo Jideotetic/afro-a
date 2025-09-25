@@ -23,8 +23,9 @@ import { Input } from "./ui/input";
 function GetInTouchForm({ tag = "desktop" | "mobile" }) {
 	const [open, setOpen] = useState(false);
 	const [submitted, setSubmitted] = useState(false);
-	// const [phoneCode, setPhoneCode] = useState("+234");
+	const [whatsApp, setWhatsApp] = useState("");
 	const [phone, setPhone] = useState("");
+	const [sameAsPhone, setSameAsPhone] = useState(false);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -124,6 +125,14 @@ function GetInTouchForm({ tag = "desktop" | "mobile" }) {
 										<Input
 											type="checkbox"
 											className="w-3 h-3 accent-orange-600"
+											value={sameAsPhone}
+											onChange={(e) => {
+												const isChecked = e.target.checked;
+												setSameAsPhone(isChecked);
+												if (isChecked) {
+													setWhatsApp(phone);
+												}
+											}}
 										/>
 										Same as Phone number
 									</Label>
@@ -131,8 +140,8 @@ function GetInTouchForm({ tag = "desktop" | "mobile" }) {
 
 								<PhoneInput
 									defaultCountry="ng"
-									value={phone}
-									onChange={(phone) => setPhone(phone)}
+									value={whatsApp}
+									onChange={(whatsApp) => setWhatsApp(whatsApp)}
 									inputStyle={{
 										borderTopRightRadius: "12px",
 										borderBottomRightRadius: "12px",
