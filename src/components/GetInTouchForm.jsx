@@ -21,7 +21,7 @@ import "react-international-phone/style.css";
 import { Input } from "./ui/input";
 import CustomSelect from "./CustomSelect";
 
-function GetInTouchForm({ tag = "desktop" | "mobile", title }) {
+function GetInTouchForm({ tag = "desktop" | "mobile" | "hero", title }) {
 	const [open, setOpen] = useState(false);
 	const [submitted, setSubmitted] = useState(false);
 	const [whatsApp, setWhatsApp] = useState("");
@@ -62,13 +62,23 @@ function GetInTouchForm({ tag = "desktop" | "mobile", title }) {
 	};
 
 	return (
-		<Dialog open={open} onOpenChange={setOpen}>
+		<Dialog
+			open={open}
+			onOpenChange={() => {
+				setOpen(!open);
+				setSubmitted(false);
+			}}
+		>
 			<form>
 				<DialogTrigger asChild>
 					<Button
 						size="lg"
 						className={`bg-[#FE7A04] text-white text-base ${
-							tag === "desktop" ? "hidden md:block" : "block w-full"
+							tag === "desktop"
+								? "hidden md:block"
+								: tag === "mobile"
+								? "block w-full"
+								: "block"
 						} cursor-pointer `}
 						variant="secondary"
 					>
@@ -92,7 +102,7 @@ function GetInTouchForm({ tag = "desktop" | "mobile", title }) {
 								Fill out the form and we will reach out to you.
 							</DialogDescription>
 						</DialogHeader>
-						<div className="grid gap-6 sm:gap-10 sm:grid-cols-2">
+						<div className="grid gap-6 md:gap-10 md:grid-cols-2">
 							<CustomInput
 								label="Full Name"
 								placeholder="Enter Name"

@@ -1,3 +1,4 @@
+import GetInTouchForm from "./GetInTouchForm";
 import { Button } from "./ui/button";
 
 function Hero() {
@@ -20,13 +21,7 @@ function Hero() {
 							</p>
 						</div>
 
-						<Button
-							size="lg"
-							className="bg-[#FE7A04] w-fit text-white"
-							variant="secondary"
-						>
-							Get In Touch
-						</Button>
+						<GetInTouchForm tag="hero" />
 					</div>
 
 					<img

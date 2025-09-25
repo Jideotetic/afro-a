@@ -1,5 +1,4 @@
 import Hero from "@/components/Hero";
-import { Button } from "@/components/ui/button";
 import { FAQs, SERVICES, VISION } from "@/lib/constants";
 import {
 	Accordion,
@@ -7,6 +6,7 @@ import {
 	AccordionItem,
 	AccordionTrigger,
 } from "@/components/ui/accordion";
+import GetInTouchForm from "@/components/GetInTouchForm";
 
 function HomePage() {
 	return (
@@ -150,13 +150,7 @@ function HomePage() {
 							</div>
 						</div>
 
-						<Button
-							size="lg"
-							className="bg-[#FE7A04] w-fit text-white"
-							variant="secondary"
-						>
-							Join Now
-						</Button>
+						<GetInTouchForm tag="hero" title="Join Now" />
 					</div>
 				</div>
 			</div>
