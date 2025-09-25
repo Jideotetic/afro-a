@@ -87,7 +87,7 @@ function GetInTouchForm({ tag = "desktop" | "mobile" | "hero", title }) {
 					</Button>
 				</DialogTrigger>
 				{!submitted ? (
-					<DialogContent className="scrollbar-hidden max-h-[calc(100vh-100px)] pt-[56px] pb-[72px] px-[64px] overflow-scroll w-full bg-white sm:max-w-[1128px]">
+					<DialogContent className="scrollbar-hidden max-h-[calc(100vh-100px)] pt-[40px] md:pt-[56px] pb-[64px] md:pb-[72px] md:px-[64px] overflow-scroll w-full bg-white sm:max-w-[1128px]">
 						<DialogHeader>
 							<button
 								onClick={handleClose}
