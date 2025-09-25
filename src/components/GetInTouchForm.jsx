@@ -27,7 +27,8 @@ function GetInTouchForm({ tag = "desktop" | "mobile" | "hero", title }) {
 	const [whatsApp, setWhatsApp] = useState("");
 	const [phone, setPhone] = useState("");
 	const [sameAsPhone, setSameAsPhone] = useState(false);
-	const [pagesMonetized, setPagesMonetized] = useState(false);
+	const [pagesMonetized, setPagesMonetized] = useState(true);
+	const [selectedMonetizedPages, setSelectedMonetizedPages] = useState([]);
 
 	const options = [
 		{ value: "musician", label: "Musician" },
@@ -60,6 +61,8 @@ function GetInTouchForm({ tag = "desktop" | "mobile" | "hero", title }) {
 		setOpen(false);
 		setSubmitted(false);
 	};
+
+	console.log({ pagesMonetized });
 
 	return (
 		<Dialog
@@ -219,15 +222,13 @@ function GetInTouchForm({ tag = "desktop" | "mobile" | "hero", title }) {
 								label="Is any of your social media pages monetized?"
 								isMulti={false}
 								closeMenuOnSelect={true}
-								onChange={(e) => {
-									console.log(e);
-									if (e.value === "yes") {
-										setPagesMonetized(true);
-									} else {
-										setPagesMonetized(false);
-									}
+								onChange={(selectedOption) => {
+									const isMonetized = selectedOption?.value === "yes";
+									setPagesMonetized(isMonetized);
 
-									console.log(pagesMonetized);
+									if (!isMonetized) {
+										setSelectedMonetizedPages([]);
+									}
 								}}
 							/>
 
@@ -237,6 +238,8 @@ function GetInTouchForm({ tag = "desktop" | "mobile" | "hero", title }) {
 								isMulti={true}
 								closeMenuOnSelect={false}
 								disabled={!pagesMonetized}
+								value={selectedMonetizedPages}
+								onChange={(selected) => setSelectedMonetizedPages(selected)}
 							/>
 
 							<Label className="flex flex-col items-start gap-2 font-light text-[#09032A]">

@@ -20,7 +20,7 @@ function CustomSelect({
 				components={animatedComponents}
 				placeholder="Select"
 				isMulti={isMulti}
-				disabled={disabled}
+				isDisabled={disabled}
 				options={options}
 				onChange={onChange}
 				styles={{
