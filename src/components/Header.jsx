@@ -43,7 +43,7 @@ function Header() {
 								{NAV_LINKS.map((link) => (
 									<li key={link.title}>
 										<a
-											className="hover:text-[#FE7A04] text-[18px] hover:underline"
+											className="hover:text-[#FE7A04] text-[18px] font-normal text-[#3F3E3E] hover:underline"
 											href={link.href}
 											onClick={() => setSheetIsOpen(false)}
 										>

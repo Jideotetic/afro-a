@@ -9,11 +9,11 @@ function RootLayout() {
 				<Header />
 			</div>
 
-			<main>
+			<main className="bg-white">
 				<Outlet />
 			</main>
 
-			<div className="bg-[#FFFCF2]">
+			<div className="bg-[#FFFCF2] px-5">
 				<Footer />
 			</div>
 		</>

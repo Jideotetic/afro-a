@@ -13,6 +13,8 @@ import { PiTrendUpFill } from "react-icons/pi";
 import { PiHandshakeFill } from "react-icons/pi";
 import { PiArrowsOutFill } from "react-icons/pi";
 import { PiIntersectSquareFill } from "react-icons/pi";
+import { RiInstagramFill, RiTiktokFill, RiTwitterXFill } from "react-icons/ri";
+import { FaFacebook } from "react-icons/fa";
 
 export const NAV_LINKS = [
 	{ title: "Services", href: "#services" },
@@ -153,5 +155,28 @@ export const FAQs = [
 			"We stand behind our products with a comprehensive 30-day return policy. If you're not completely satisfied, simply return the item in its original condition.",
 			"Our hassle-free return process includes free return shipping and full refunds processed within 48 hours of receiving the returned item.",
 		],
+	},
+];
+
+export const SOCIAL_LINKS = [
+	{
+		title: "Twitter",
+		icon: RiTwitterXFill,
+		href: "",
+	},
+	{
+		title: "Instagram",
+		icon: RiInstagramFill,
+		href: "",
+	},
+	{
+		title: "TikTok",
+		icon: RiTiktokFill,
+		href: "",
+	},
+	{
+		title: "Facebook",
+		icon: FaFacebook,
+		href: "",
 	},
 ];
