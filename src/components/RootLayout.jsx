@@ -9,7 +9,7 @@ function RootLayout() {
 				<Header />
 			</div>
 
-			<main className="bg-white">
+			<main className="bg-white text-[18px] text-[#3F3E3E] font-light sm:text-[24px]">
 				<Outlet />
 			</main>
 
