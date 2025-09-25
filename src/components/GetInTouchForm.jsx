@@ -16,10 +16,15 @@ import { RiInstagramFill, RiTiktokFill, RiTwitterXFill } from "react-icons/ri";
 import { PiWhatsappLogoFill } from "react-icons/pi";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
 import { useState } from "react";
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
+import { Input } from "./ui/input";
 
 function GetInTouchForm({ tag = "desktop" | "mobile" }) {
 	const [open, setOpen] = useState(false);
 	const [submitted, setSubmitted] = useState(false);
+	// const [phoneCode, setPhoneCode] = useState("+234");
+	const [phone, setPhone] = useState("");
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -70,11 +75,31 @@ function GetInTouchForm({ tag = "desktop" | "mobile" }) {
 								type="text"
 							/>
 
-							<CustomInput
-								label="Phone Number"
-								placeholder="Enter Phone Number"
-								type="text"
-							/>
+							<div className="flex flex-col gap-1 text-sm">
+								<label className="block  font-light text-[#3F3E3E]">
+									Phone Number
+								</label>
+								<PhoneInput
+									defaultCountry="ng"
+									value={phone}
+									onChange={(phone) => setPhone(phone)}
+									inputStyle={{
+										borderTopRightRadius: "12px",
+										borderBottomRightRadius: "12px",
+										fontSize: "14px",
+										height: "46px",
+										width: "100%",
+									}}
+									countrySelectorStyleProps={{
+										buttonStyle: {
+											borderTopLeftRadius: "12px",
+											borderBottomLeftRadius: "12px",
+											height: "46px",
+											width: "78px",
+										},
+									}}
+								/>
+							</div>
 
 							<CustomInput
 								label="Email Address"
@@ -89,11 +114,42 @@ function GetInTouchForm({ tag = "desktop" | "mobile" }) {
 								type="url"
 							/>
 
-							<CustomInput
-								label="WhatsApp Contact"
-								placeholder="Enter WhatsApp Number"
-								type="text"
-							/>
+							<div className="flex flex-col gap-1 text-sm">
+								<div className="flex justify-between flex-wrap gap-2">
+									<label className="block  font-light text-[#3F3E3E] shrink-0">
+										WhatsApp Contact
+									</label>
+
+									<Label className="font-light text-[#2A1552] flex items-center gap-1 shrink-0">
+										<Input
+											type="checkbox"
+											className="w-3 h-3 accent-orange-600"
+										/>
+										Same as Phone number
+									</Label>
+								</div>
+
+								<PhoneInput
+									defaultCountry="ng"
+									value={phone}
+									onChange={(phone) => setPhone(phone)}
+									inputStyle={{
+										borderTopRightRadius: "12px",
+										borderBottomRightRadius: "12px",
+										fontSize: "14px",
+										height: "46px",
+										width: "100%",
+									}}
+									countrySelectorStyleProps={{
+										buttonStyle: {
+											borderTopLeftRadius: "12px",
+											borderBottomLeftRadius: "12px",
+											height: "46px",
+											width: "78px",
+										},
+									}}
+								/>
+							</div>
 
 							<CustomInput
 								label="Instagram Page"
