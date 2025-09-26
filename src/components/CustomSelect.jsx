@@ -10,6 +10,7 @@ function CustomSelect({
 	isMulti = true,
 	disabled = false,
 	onChange,
+	value,
 }) {
 	return (
 		<div className="flex flex-col gap-1 text-sm">
@@ -23,12 +24,16 @@ function CustomSelect({
 				isDisabled={disabled}
 				options={options}
 				onChange={onChange}
+				value={value}
 				styles={{
 					control: (baseStyles, state) => ({
 						...baseStyles,
-						borderColor: state.isFocused ? "#D0D5E0" : "#D0D5E0",
+						border: state.isFocused ? "1px solid #D0D5E0" : "1px solid #D0D5E0",
+						":hover": { borderColor: "#D0D5E0" },
+						outline: "none",
 						borderRadius: "12px",
 						height: "46px",
+						boxShadow: "none",
 					}),
 					multiValue: (styles) => {
 						return {

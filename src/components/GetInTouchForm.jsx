@@ -29,6 +29,13 @@ function GetInTouchForm({ tag = "desktop" | "mobile" | "hero", title }) {
 	const [sameAsPhone, setSameAsPhone] = useState(false);
 	const [pagesMonetized, setPagesMonetized] = useState(false);
 	const [selectedMonetizedPages, setSelectedMonetizedPages] = useState([]);
+	const [selectedOptions, setSelectedOptions] = useState([]);
+
+	const handleMultiSelectChange = (selected) => {
+		if (selected.length <= 3) {
+			setSelectedOptions(selected);
+		}
+	};
 
 	const options = [
 		{ value: "musician", label: "Musician" },
@@ -124,6 +131,7 @@ function GetInTouchForm({ tag = "desktop" | "mobile" | "hero", title }) {
 										fontSize: "14px",
 										height: "46px",
 										width: "100%",
+										border: "1px solid #D0D5E0",
 									}}
 									countrySelectorStyleProps={{
 										buttonStyle: {
@@ -131,6 +139,7 @@ function GetInTouchForm({ tag = "desktop" | "mobile" | "hero", title }) {
 											borderBottomLeftRadius: "12px",
 											height: "46px",
 											width: "78px",
+											border: "1px solid #D0D5E0",
 										},
 									}}
 								/>
@@ -147,6 +156,8 @@ function GetInTouchForm({ tag = "desktop" | "mobile" | "hero", title }) {
 								label="Which options apply to you?"
 								isMulti={true}
 								closeMenuOnSelect={false}
+								onChange={handleMultiSelectChange}
+								value={selectedOptions}
 							/>
 
 							<div className="flex flex-col gap-1 text-sm">
@@ -182,6 +193,7 @@ function GetInTouchForm({ tag = "desktop" | "mobile" | "hero", title }) {
 										fontSize: "14px",
 										height: "46px",
 										width: "100%",
+										border: "1px solid #D0D5E0",
 									}}
 									countrySelectorStyleProps={{
 										buttonStyle: {
@@ -189,6 +201,7 @@ function GetInTouchForm({ tag = "desktop" | "mobile" | "hero", title }) {
 											borderBottomLeftRadius: "12px",
 											height: "46px",
 											width: "78px",
+											border: "1px solid #D0D5E0",
 										},
 									}}
 								/>
@@ -243,7 +256,7 @@ function GetInTouchForm({ tag = "desktop" | "mobile" | "hero", title }) {
 							<Label className="flex flex-col items-start gap-2 font-light text-[#09032A]">
 								Briefly tell us about your creative journey
 								<Textarea
-									className="h-[148px] rounded-[8px] border border-[#D0D5E0] px-4 placeholder:text-sm placeholder:text-[#8791A7] focus:border-[#D0D5E0] focus:outline-1 focus-visible:border focus-visible:ring-1"
+									className="h-[148px] rounded-[8px] border border-[#D0D5E0] px-4 placeholder:text-sm placeholder:text-[#8791A7] focus:border-[#D0D5E0]"
 									placeholder="Type text..."
 								/>
 							</Label>
@@ -251,7 +264,7 @@ function GetInTouchForm({ tag = "desktop" | "mobile" | "hero", title }) {
 							<Label className="flex flex-col items-start gap-2 font-light text-[#09032A]">
 								Anything question for Afro Ascend? (optional)
 								<Textarea
-									className="h-[148px] rounded-[8px] border border-[#D0D5E0] px-4 placeholder:text-sm placeholder:text-[#8791A7] focus:border-[#D0D5E0] focus:outline-1 focus-visible:border focus-visible:ring-1"
+									className="h-[148px] rounded-[8px] border border-[#D0D5E0] px-4 placeholder:text-sm placeholder:text-[#8791A7] focus:border-[#D0D5E0]"
 									placeholder="Type text..."
 								/>
 							</Label>
