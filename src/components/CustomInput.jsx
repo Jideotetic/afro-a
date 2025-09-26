@@ -14,14 +14,14 @@ export default function CustomInput({
 			{label}
 			{prefix ? (
 				<div className="relative w-full rounded-sm">
-					<span className="absolute top-0 bottom-0 flex h-full items-center border-none rounded-l-[12px] bg-[#FFF9F5] px-4 pt-2 text-sm text-[#2A1552]">
+					<span className="absolute top-0 bottom-0 flex h-full items-center border border-[#D0D5E0] border-r-0 rounded-l-[12px] bg-[#FFF9F5] px-4 pt-0.5 text-sm text-[#2A1552]">
 						{prefix}
 					</span>
 					<Input
 						type={type}
 						placeholder={placeholder}
 						{...props}
-						className={`rounded-[12px] border border-[#D0D5E0] px-4 pl-24 placeholder:text-sm placeholder:text-[#8791A7] focus:border focus:outline-1 focus-visible:border focus-visible:ring-1 ${className}`}
+						className={`rounded-[12px] border border-[#D0D5E0] px-4 pl-24 placeholder:text-sm placeholder:text-[#8791A7] ${className}`}
 					/>
 				</div>
 			) : (
@@ -29,7 +29,7 @@ export default function CustomInput({
 					type={type}
 					placeholder={placeholder}
 					{...props}
-					className={`rounded-[12px] border border-[#D0D5E0] px-4 placeholder:text-sm placeholder:text-[#8791A7] focus:border focus:outline-1 focus-visible:border focus-visible:ring-1 ${className}`}
+					className={`rounded-[12px] border border-[#D0D5E0] px-4 placeholder:text-sm placeholder:text-[#8791A7] ${className}`}
 				/>
 			)}
 		</Label>
