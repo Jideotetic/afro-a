@@ -13,7 +13,7 @@ import { PiTrendUpFill } from "react-icons/pi";
 import { PiHandshakeFill } from "react-icons/pi";
 import { PiArrowsOutFill } from "react-icons/pi";
 import { PiIntersectSquareFill } from "react-icons/pi";
-import { RiInstagramFill, RiTiktokFill, RiTwitterXFill } from "react-icons/ri";
+import { RiInstagramFill, RiTiktokFill } from "react-icons/ri";
 import { FaFacebook } from "react-icons/fa";
 
 export const NAV_LINKS = [
@@ -159,11 +159,6 @@ export const FAQs = [
 ];
 
 export const SOCIAL_LINKS = [
-	{
-		title: "Twitter",
-		icon: RiTwitterXFill,
-		href: "",
-	},
 	{
 		title: "Instagram",
 		icon: RiInstagramFill,

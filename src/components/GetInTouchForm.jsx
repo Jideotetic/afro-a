@@ -12,14 +12,13 @@ import { Button } from "./ui/button";
 import { Label } from "./ui/label";
 import CustomInput from "./CustomInput";
 import { Textarea } from "./ui/textarea";
-import { RiInstagramFill, RiTiktokFill, RiTwitterXFill } from "react-icons/ri";
-import { PiWhatsappLogoFill } from "react-icons/pi";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
 import { useState } from "react";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
 import { Input } from "./ui/input";
 import CustomSelect from "./CustomSelect";
+import { SOCIAL_LINKS } from "@/lib/constants";
 
 function GetInTouchForm({ tag = "desktop" | "mobile" | "hero", title }) {
 	const [open, setOpen] = useState(false);
@@ -204,6 +203,7 @@ function GetInTouchForm({ tag = "desktop" | "mobile" | "hero", title }) {
 											border: "1px solid #D0D5E0",
 										},
 									}}
+									disabled={sameAsPhone}
 								/>
 							</div>
 
@@ -271,22 +271,17 @@ function GetInTouchForm({ tag = "desktop" | "mobile" | "hero", title }) {
 						</div>
 						<DialogFooter className="flex items-center sm:justify-between flex-wrap gap-8">
 							<ul className="flex items-center flex-wrap gap-5">
-								<li className="group hover:text-[#FE7A04] flex items-center gap-2">
-									<PiWhatsappLogoFill className="rounded-[4px] group-hover:text-[#FE7A04] text-[20px] text-[#0D0106]" />
-									<a href="">WhatsApp</a>
-								</li>
-								<li className="group flex hover:text-[#FE7A04] items-center gap-2">
-									<RiTwitterXFill className="rounded-[4px] group-hover:text-[#FE7A04] text-[20px] text-[#0D0106]" />
-									<a href="">Twitter</a>
-								</li>
-								<li className="group hover:text-[#FE7A04] flex items-center gap-2">
-									<RiInstagramFill className="rounded-[4px] group-hover:text-[#FE7A04] text-[20px] text-[#0D0106]" />
-									<a href="">Instagram</a>
-								</li>
-								<li className="group hover:text-[#FE7A04] flex items-center gap-2">
-									<RiTiktokFill className="rounded-[4px] group-hover:text-[#FE7A04] text-[20px] text-[#0D0106]" />
-									<a href="">TikTok</a>
-								</li>
+								{SOCIAL_LINKS.map((link) => (
+									<li
+										key={link.title}
+										className="group flex hover:text-[#FE7A04] items-center gap-2"
+									>
+										{link.icon && (
+											<link.icon className="rounded-[4px] group-hover:text-[#FE7A04] text-[20px] text-[#0D0106]" />
+										)}
+										<a href={link.href}>{link.title}</a>
+									</li>
+								))}
 							</ul>
 
 							<DialogClose asChild>
